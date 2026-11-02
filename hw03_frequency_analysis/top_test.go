@@ -43,9 +43,9 @@ var text = `Как видите, он  спускается  по  лестни�
 	посидеть у огня и послушать какую-нибудь интересную сказку.
 		В этот вечер...`
 
-func TestTop10(t *testing.T) {
+func TestTop(t *testing.T) {
 	t.Run("no words in empty string", func(t *testing.T) {
-		require.Len(t, Top10(""), 0)
+		require.Len(t, Top(""), 0)
 	})
 
 	t.Run("positive test", func(t *testing.T) {
@@ -62,7 +62,7 @@ func TestTop10(t *testing.T) {
 				"кристофер", // 4
 				"не",        // 4
 			}
-			require.Equal(t, expected, Top10(text))
+			require.Equal(t, expected, Top(text))
 		} else {
 			expected := []string{
 				"он",        // 8
@@ -76,7 +76,7 @@ func TestTop10(t *testing.T) {
 				"не",        // 4
 				"то",        // 4
 			}
-			require.Equal(t, expected, Top10(text))
+			require.Equal(t, expected, Top(text))
 		}
 	})
 }
